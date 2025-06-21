@@ -20,7 +20,7 @@ export default async function Home() {
           return (
             <div className="w-full flex items-center gap-4 max-sm:px-4">
               <Link
-                href={`/posts/${post.slug}`}
+                href={`/post/${post.slug}`}
                 className="font-bold no-underline whitespace-nowrap hover:underline"
               >
                 {post.title}

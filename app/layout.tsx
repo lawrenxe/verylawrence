@@ -48,7 +48,7 @@ export default function RootLayout({
               </Link>
             </div>
             <div className="flex flex-row sm:justify-end justify-center items-center gap-x-4 mb-12">
-              <Link className=" hover:underline" href="/contents">
+              <Link className=" hover:underline" href="/post">
                 目录
               </Link>
               <p>/</p>
