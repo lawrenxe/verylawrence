@@ -5,14 +5,11 @@ import { RiSeparator } from "react-icons/ri";
 export default async function Home() {
   const posts = await getAllPosts();
   return (
-    <main className="w-full">
+    <main className="w-full flex flex-col gap-y-4">
       {posts.map((post) => (
-        <>
+        <div className="w-full flex flex-row">
           <Post key={post.slug} post={post} />
-          <div className="last:hidden w-full h-fit  flex flex-col justify-center items-center">
-            <RiSeparator size={26} />
-          </div>
-        </>
+        </div>
       ))}
     </main>
   );

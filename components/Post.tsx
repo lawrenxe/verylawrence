@@ -11,7 +11,7 @@ export default function Post({ post }: any) {
   });
 
   return (
-    <div className="prose bg-white max-w-4xl mb-16 overflow-x-hidden">
+    <div className="prose bg-white max-w-4xl overflow-x-hidden p-4 border-[1px] border-black rounded-xl">
       <h2>
         <Link href={`/post/${slug}`} className="font-[700] no-underline">
           {title ?? "梦话"}

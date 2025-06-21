@@ -31,7 +31,7 @@ export default function RootLayout({
                 className="w-[150px] "
               />
             </div>
-            <div className="flex flex-wrap justify-center sm:justify-between items-end gap-x-2 mb-16 gap-y-1 ">
+            <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center sm:items-end gap-x-2 mb-16 gap-y-1 ">
               <h1 className="text-4xl font-bold text-black">生活高手</h1>
               <h1 className="text-lg sm:text-3xl font-bold bg-black text-white px-2 py-1 pt-[2px]">
                 veryLawrence
