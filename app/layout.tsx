@@ -4,6 +4,8 @@ import { Noto_Serif_SC } from "next/font/google";
 import Image from "next/image";
 import Divider from "@/components/layout/Divider";
 import Link from "next/link";
+import Header from "@/components/Header";
+import BackToTop from "@/components/BackToTop";
 
 export const metadata: Metadata = {
   title: "VeryLawrence",
@@ -33,13 +35,8 @@ export default function RootLayout({
                 className="w-[150px] "
               />
             </div>
-            <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center sm:items-end gap-x-2  gap-y-1 sticky top-0 bg-white z-10 pb-2 pt-2">
-              <Link
-                href={"/"}
-                className="text-4xl font-bold text-black flex flex-row items-start gap-x-2 "
-              >
-                <h1>生活高手</h1>
-              </Link>
+            <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center sm:items-end gap-x-2  gap-y-1 sticky -top-12 sm:top-0 bg-white z-10 pb-2 pt-2">
+              <Header />
               <Link
                 href={"/"}
                 className="text-lg sm:text-3xl font-bold bg-black text-white px-2 py-1 pt-[2px]"
@@ -69,9 +66,12 @@ export default function RootLayout({
           <p className="text-sm sm:text-sm font-bold  text-black px-2 pb-[1px]">
             Copyright {new Date().getFullYear()}{" "}
           </p>
-          <p className="text-sm sm:text-sm font-bold bg-black text-white px-2 pb-[1px]">
-            veryLawrence
-          </p>
+
+          <BackToTop>
+            <p className="text-sm sm:text-sm font-bold bg-black text-white px-2 pb-[1px]">
+              veryLawrence
+            </p>
+          </BackToTop>
         </footer>
       </body>
     </html>
