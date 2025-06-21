@@ -1,20 +1,29 @@
-export default function Post({ post }: any) {
-  const { content, slug, createdAt } = post.post;
+import Link from "next/link";
 
-  const dateString = new Date(createdAt).toLocaleDateString("en-US", {
+export default function Post({ post }: any) {
+  const { mdContent, slug, publishedAt, title } = post;
+
+  const dateString = new Date(publishedAt).toLocaleDateString("zh-CN", {
     dateStyle: "full",
   });
-  const timeString = new Date(createdAt).toLocaleTimeString("en-US", {
+  const timeString = new Date(publishedAt).toLocaleTimeString("zh-CN", {
     timeStyle: "short",
   });
 
   return (
-    <div className="prose bg-white max-w-4xl mb-4 p-4 rounded-md">
-      <div dangerouslySetInnerHTML={{ __html: content.html }}></div>
-      <time dateTime={createdAt}>
-        <a href={`/posts/${slug}`}>
-          {dateString} at {timeString}
-        </a>
+    <div className="prose bg-white max-w-4xl mb-16 overflow-x-hidden">
+      <h2>
+        <Link href={`/post/${slug}`} className="font-[700] no-underline">
+          {title ?? "梦话"}
+        </Link>
+      </h2>
+
+      <div dangerouslySetInnerHTML={{ __html: mdContent }} />
+
+      <time dateTime={publishedAt}>
+        <Link href={`/post/${slug}`}>
+          {dateString} {timeString}
+        </Link>
       </time>
     </div>
   );
