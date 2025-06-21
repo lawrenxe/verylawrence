@@ -1,11 +1,9 @@
+import BackToTop from "@/components/BackToTop";
 import type { Metadata } from "next";
-import "./globals.css";
 import { Noto_Serif_SC } from "next/font/google";
 import Image from "next/image";
-import Divider from "@/components/layout/Divider";
 import Link from "next/link";
-import Header from "@/components/Header";
-import BackToTop from "@/components/BackToTop";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "VeryLawrence",
