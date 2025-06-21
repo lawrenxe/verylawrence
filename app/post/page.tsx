@@ -11,12 +11,13 @@ export default async function Home() {
           return post.title;
         })
         .map((post) => {
-          const dateString = new Date(post.publishedAt).toLocaleDateString(
-            "zh-CN",
-            {
-              dateStyle: "short",
-            }
-          );
+          const publishedDate = new Date(post.publishedAt);
+          const dateString = `${publishedDate.getFullYear()}/${String(
+            publishedDate.getMonth() + 1
+          ).padStart(2, "0")}/${String(publishedDate.getDate()).padStart(
+            2,
+            "0"
+          )}`;
           return (
             <div className="w-full flex items-center gap-4 max-sm:px-4">
               <Link
