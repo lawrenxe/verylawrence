@@ -36,7 +36,9 @@ export default function RootLayout({
               />
             </div>
             <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center sm:items-end gap-x-2  gap-y-1 sticky -top-12 sm:top-0 bg-white z-10 pb-2 pt-2">
-              <Header />
+              <Link href="/" className="text-4xl font-bold text-black">
+                <h1>生活高手</h1>
+              </Link>
               <Link
                 href={"/"}
                 className="text-lg sm:text-3xl font-bold bg-black text-white px-2 py-1 pt-[2px]"
