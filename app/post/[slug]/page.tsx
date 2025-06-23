@@ -21,6 +21,7 @@ export async function generateMetadata({
 
   return {
     title: `${post?.title} | VeryLawrence`,
+    metadataBase: new URL("https://www.verylawrence.com"),
     openGraph: {
       images: [
         {

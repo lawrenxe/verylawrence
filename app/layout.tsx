@@ -44,8 +44,8 @@ export default function RootLayout({
                 目录
               </Link>
               <p>/</p>
-              <Link className=" hover:underline" href="/about">
-                关于我
+              <Link className=" hover:underline" href="/now">
+                当下
               </Link>
               {/* <p>/</p>
               <Link className=" hover:underline" href="/contact">

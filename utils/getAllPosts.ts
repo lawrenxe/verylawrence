@@ -5,7 +5,7 @@ import { remark } from "remark";
 import html from "remark-html";
 
 const contentDir = path.join(process.cwd(), "content");
-
+const nowDir = path.join(contentDir, "now");
 export type Post = {
   title?: string;
   publishedAt: string;
@@ -63,4 +63,37 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     slug,
     mdContent: contentHtml,
   };
+}
+
+export async function getAllNowPosts(): Promise<Post[]> {
+  const fileNames = fs
+    .readdirSync(nowDir)
+    .filter((file) => file.endsWith(".md"));
+
+  const postPromises: Promise<Post>[] = fileNames.map(async (fileName) => {
+    const filePath = path.join(nowDir, fileName);
+    const fileContent = fs.readFileSync(filePath, "utf-8");
+
+    const { data, content } = matter(fileContent);
+
+    const processedContent = await remark().use(html).process(content);
+    const contentHtml = processedContent.toString();
+
+    return {
+      title: data.title,
+      publishedAt: data.publishedAt,
+      slug: fileName.replace(/\.md$/, ""),
+      mdContent: contentHtml,
+    };
+  });
+
+  const posts = await Promise.all(postPromises);
+
+  posts.sort((a, b) => {
+    return (
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    );
+  });
+
+  return posts;
 }

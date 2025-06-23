@@ -1,9 +1,9 @@
 import Post from "@/components/Post";
-import { getAllPosts } from "@/utils/getAllPosts";
+import { getAllNowPosts } from "@/utils/getAllPosts";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "生活高手 | VeryLawrence",
+  title: "关于我 | VeryLawrence",
   metadataBase: new URL("https://www.verylawrence.com"),
   openGraph: {
     images: [
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Home() {
-  const posts = await getAllPosts();
+export default async function About() {
+  const posts = await getAllNowPosts();
   return (
     <main className="w-full flex flex-col gap-y-4">
       {posts.map((post, index) => (
