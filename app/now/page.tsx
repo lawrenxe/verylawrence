@@ -3,7 +3,7 @@ import { getAllNowPosts } from "@/utils/getAllPosts";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "关于我 | VeryLawrence",
+  title: "当下 | VeryLawrence",
   metadataBase: new URL("https://www.verylawrence.com"),
   openGraph: {
     images: [
