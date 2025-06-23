@@ -1,5 +1,8 @@
-import { getAllPosts } from "@/utils/getAllPosts";
-import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "关于我 | VeryLawrence",
+};
 
 export default async function About() {
   return (

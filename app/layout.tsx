@@ -1,18 +1,18 @@
 import BackToTop from "@/components/BackToTop";
-import type { Metadata } from "next";
 import { Noto_Serif_SC } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
-
-export const metadata: Metadata = {
-  title: "VeryLawrence",
-};
+import { Metadata } from "next";
 
 const notoSerif = Noto_Serif_SC({
   weight: ["200", "300", "400", "500", "600", "700", "900"],
   subsets: ["latin"],
 });
+
+export const metadata: Metadata = {
+  title: "生活高手 | VeryLawrence",
+};
 
 export default function RootLayout({
   children,

@@ -1,5 +1,6 @@
 import Post from "@/components/Post";
-import { getPostBySlug, getAllPosts } from "@/utils/getAllPosts";
+import { getAllPosts, getPostBySlug } from "@/utils/getAllPosts";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -8,6 +9,19 @@ export async function generateStaticParams() {
   return posts.map((post) => ({
     slug: post.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  // fetch post information
+  const post = await getPostBySlug(params.slug);
+
+  return {
+    title: `${post?.title} | VeryLawrence`,
+  };
 }
 
 export const dynamicParams = false;

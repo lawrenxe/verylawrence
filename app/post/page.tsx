@@ -1,5 +1,10 @@
 import { getAllPosts } from "@/utils/getAllPosts";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "目录 | VeryLawrence",
+};
 
 export default async function Home() {
   const posts = await getAllPosts();
