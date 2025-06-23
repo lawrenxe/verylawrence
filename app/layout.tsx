@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { FaArrowAltCircleUp } from "react-icons/fa";
 
 const notoSerif = Noto_Serif_SC({
   weight: ["200", "300", "400", "500", "600", "700", "900"],
@@ -48,25 +49,27 @@ export default function RootLayout({
               <Link className=" hover:underline" href="/now">
                 当下
               </Link>
-              {/* <p>/</p>
+              <p>/</p>
               <Link className=" hover:underline" href="/contact">
                 联系我
-              </Link> */}
+              </Link>
             </div>
 
             {children}
           </div>
         </div>
 
-        <footer className="w-full flex flex-row justify-center items-center  text-black pb-12 gap-x-2 min-h-[16px] ">
+        <footer className="w-full flex flex-col justify-center items-center  text-black pb-12 gap-y-2 min-h-[16px] ">
           <p className="text-sm sm:text-sm font-bold  text-black px-2 pb-[1px]">
             Copyright {new Date().getFullYear()}{" "}
           </p>
-
           <BackToTop>
-            <p className="text-sm sm:text-sm font-bold bg-black text-white px-2 pb-[1px]">
-              veryLawrence
-            </p>
+            <div className="flex flex-row gap-x-2">
+              <p className="text-sm sm:text-sm font-bold bg-black text-white px-2 pb-[1px]">
+                veryLawrence
+              </p>
+              <FaArrowAltCircleUp className="text-2xl" />
+            </div>
           </BackToTop>
         </footer>
       </body>
