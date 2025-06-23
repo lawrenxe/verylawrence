@@ -3,16 +3,11 @@ import { Noto_Serif_SC } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
-import { Metadata } from "next";
 
 const notoSerif = Noto_Serif_SC({
   weight: ["200", "300", "400", "500", "600", "700", "900"],
   subsets: ["latin"],
 });
-
-export const metadata: Metadata = {
-  title: "生活高手 | VeryLawrence",
-};
 
 export default function RootLayout({
   children,
@@ -74,6 +69,18 @@ export default function RootLayout({
           </BackToTop>
         </footer>
       </body>
+
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-NFTW0Y5RJB"
+      ></script>
+      <script>
+        {` window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NFTW0Y5RJB');
+`}
+      </script>
     </html>
   );
 }

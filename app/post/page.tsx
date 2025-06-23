@@ -4,6 +4,16 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "目录 | VeryLawrence",
+  openGraph: {
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "VeryLawrence",
+      },
+    ],
+  },
 };
 
 export default async function Home() {

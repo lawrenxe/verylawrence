@@ -1,6 +1,20 @@
 import Post from "@/components/Post";
 import { getAllPosts } from "@/utils/getAllPosts";
-import { RiSeparator } from "react-icons/ri";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "生活高手 | VeryLawrence",
+  openGraph: {
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "VeryLawrence",
+      },
+    ],
+  },
+};
 
 export default async function Home() {
   const posts = await getAllPosts();

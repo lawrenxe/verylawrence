@@ -21,6 +21,16 @@ export async function generateMetadata({
 
   return {
     title: `${post?.title} | VeryLawrence`,
+    openGraph: {
+      images: [
+        {
+          url: "/opengraph-image.png",
+          width: 1200,
+          height: 630,
+          alt: "VeryLawrence",
+        },
+      ],
+    },
   };
 }
 

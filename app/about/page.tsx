@@ -2,6 +2,16 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "关于我 | VeryLawrence",
+  openGraph: {
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "VeryLawrence",
+      },
+    ],
+  },
 };
 
 export default async function About() {
